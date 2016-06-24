@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Google Play Developer Console</string>
+    <string name="company_name">Google Inc.</string>
+    <string name="rate_type">Everyone</string>
+    <string name="score">Score</string>
+    <string name="total_score">4.7</string>
+    <string name="review">Review</string>
+    <string name="review_count">1,969</string>
+    <string name="type">Type</string>
+    <string name="tools">Tools</string>
+    <string name="app_description">Understand your app\’s statistics, get notified of changes and reply to reviews</string>
+    <string name="read_more">Read more</string>
+    <string name="install">Install</string>
+</resources>
