@@ -1,10 +1,245 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context="com.akexorcist.myapplication.MainActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivAppCover"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:adjustViewBounds="false"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            app:layout_constraintLeft_toLeftOf="@+id/activity_main"
+            app:layout_constraintRight_toRightOf="@+id/activity_main"
+            app:layout_constraintTop_toTopOf="@+id/activity_main"
+            app:srcCompat="@drawable/cover_feature" />
+
+        <ImageView
+            android:id="@+id/ivAppIcon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:contentDescription="@null"
+            app:layout_constraintLeft_toLeftOf="@+id/activity_main"
+            app:layout_constraintTop_toBottomOf="@+id/ivAppCover"
+            app:srcCompat="@drawable/ic_app" />
+
+        <TextView
+            android:id="@+id/tvAppName"
+            style="@style/SimpleHeaderText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:text="@string/app_name"
+            app:layout_constraintLeft_toRightOf="@+id/ivAppIcon"
+            app:layout_constraintRight_toLeftOf="@+id/ivBookmark"
+            app:layout_constraintTop_toTopOf="@+id/ivAppIcon" />
+
+        <TextView
+            android:id="@+id/tvCompanyName"
+            style="@style/SimpleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/company_name"
+            app:layout_constraintLeft_toLeftOf="@+id/tvAppName"
+            app:layout_constraintTop_toBottomOf="@+id/tvAppName" />
+
+        <ImageView
+            android:id="@+id/ivBookmark"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_bookmark"
+            app:layout_constraintRight_toRightOf="@+id/activity_main"
+            app:layout_constraintTop_toBottomOf="@+id/ivAppCover" />
+
+        <ImageView
+            android:id="@+id/ivRate"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_rate"
+            app:layout_constraintLeft_toLeftOf="@+id/tvCompanyName"
+            app:layout_constraintTop_toBottomOf="@+id/tvCompanyName" />
+
+        <TextView
+            android:id="@+id/tvRate"
+            style="@style/SimpleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/rate_type"
+            app:layout_constraintBottom_toBottomOf="@+id/ivRate"
+            app:layout_constraintLeft_toRightOf="@+id/ivRate"
+            app:layout_constraintTop_toTopOf="@+id/ivRate" />
+
+        <Button
+            android:id="@+id/button"
+            style="@style/SimpleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/install"
+            app:layout_constraintRight_toRightOf="@+id/activity_main"
+            app:layout_constraintTop_toBottomOf="@+id/tvRate" />
+
+        <View
+            android:id="@+id/viewDivider1"
+            style="@style/HorizontalDivider"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/alphaGray10"
+            android:contentDescription="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_bookmark"
+            app:layout_constraintLeft_toLeftOf="@+id/activity_main"
+            app:layout_constraintRight_toRightOf="@+id/activity_main"
+            app:layout_constraintTop_toBottomOf="@+id/tvReview" />
+
+        <TextView
+            android:id="@+id/tvScoreTitle"
+            style="@style/SimpleHeaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/score"
+            app:layout_constraintRight_toLeftOf="@+id/tvReviewTitle"
+            app:layout_constraintTop_toBottomOf="@+id/viewDivider2" />
+
+        <TextView
+            android:id="@+id/tvScore"
+            style="@style/SimpleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_score"
+            app:layout_constraintLeft_toLeftOf="@+id/tvScoreTitle"
+            app:layout_constraintRight_toRightOf="@+id/tvScoreTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvScoreTitle" />
+
+        <TextView
+            android:id="@+id/tvReviewTitle"
+            style="@style/SimpleHeaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/review"
+            app:layout_constraintLeft_toLeftOf="@+id/activity_main"
+            app:layout_constraintRight_toRightOf="@+id/activity_main"
+            app:layout_constraintTop_toBottomOf="@+id/viewDivider2" />
+
+        <TextView
+            android:id="@+id/tvReview"
+            style="@style/SimpleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/review_count"
+            app:layout_constraintLeft_toLeftOf="@+id/tvReviewTitle"
+            app:layout_constraintRight_toRightOf="@+id/tvReviewTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvReviewTitle" />
+
+        <TextView
+            android:id="@+id/tvTypeTitle"
+            style="@style/SimpleHeaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/type"
+            app:layout_constraintLeft_toRightOf="@+id/tvReviewTitle"
+            app:layout_constraintTop_toBottomOf="@+id/viewDivider2" />
+
+        <TextView
+            android:id="@+id/tvType"
+            style="@style/SimpleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tools"
+            app:layout_constraintLeft_toLeftOf="@+id/tvTypeTitle"
+            app:layout_constraintRight_toRightOf="@+id/tvTypeTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvTypeTitle" />
+
+        <View
+            android:id="@+id/viewDivider2"
+            style="@style/HorizontalDivider"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/alphaGray10"
+            android:contentDescription="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_bookmark"
+            app:layout_constraintLeft_toLeftOf="@+id/activity_main"
+            app:layout_constraintRight_toRightOf="@+id/activity_main"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
+
+        <TextView
+            android:id="@+id/tvAppDescription"
+            style="@style/SimpleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            android:text="@string/app_description"
+            app:layout_constraintLeft_toLeftOf="@+id/activity_main"
+            app:layout_constraintRight_toRightOf="@+id/activity_main"
+            app:layout_constraintTop_toBottomOf="@+id/viewDivider1" />
+
+        <TextView
+            android:id="@+id/tvReadMore"
+            style="@style/SimpleButtonText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/read_more"
+            app:layout_constraintBottom_toBottomOf="@+id/activity_main"
+            app:layout_constraintLeft_toLeftOf="@+id/activity_main"
+            app:layout_constraintRight_toRightOf="@+id/activity_main"
+            app:layout_constraintTop_toBottomOf="@+id/tvAppDescription" />
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>
